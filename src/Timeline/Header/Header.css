@@ -1,0 +1,19 @@
+.header {
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.header > .toggle {
+  margin: auto;
+  height: 50px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header > .toggle label {
+  margin-left: 20px;
+}

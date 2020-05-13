@@ -1,0 +1,15 @@
+.scene {
+  width: 150px;
+  height: 250px;
+  text-align: left;
+  border: 1px gray solid;
+  margin: 5px;
+  padding: 5px;
+}
+
+.scene .episode {
+  color: white;
+}
+.scene .description {
+  /*color: gray;*/
+}
