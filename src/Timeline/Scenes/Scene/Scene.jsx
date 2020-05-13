@@ -11,6 +11,7 @@ class Scene extends React.Component {
   constructor(props) {
     super(props);
 
+    this.maxDescriptionLen = 100;
     this.months = [
       'Jan',
       'Feb',
@@ -27,6 +28,12 @@ class Scene extends React.Component {
     ];
   }
 
+  trimmedDescription(description) {
+    if (description.length <= this.maxDescriptionLen) return description;
+
+    return `${description.substring(0, this.maxDescriptionLen)}...`;
+  }
+
   render() {
     const { scene } = this.props;
     const month = this.months[parseInt(scene.date.month, 10) - 1];
@@ -37,7 +44,7 @@ class Scene extends React.Component {
         <h5 className="date">
           {scene.date.day} {month} {scene.date.year}
         </h5>
-        <p className="description">{scene.description}</p>
+        <p className="description">{this.trimmedDescription(scene.description)}</p>
         <h5 className="episode">S{scene.season} E{scene.episode}</h5>
       </div>
     );

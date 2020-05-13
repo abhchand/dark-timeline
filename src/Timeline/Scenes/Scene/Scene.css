@@ -1,6 +1,6 @@
 .scene {
   width: 150px;
-  height: 250px;
+  height: 300px;
   text-align: left;
   border: 1px white solid;
   margin: 5px;
@@ -13,7 +13,7 @@
 }
 
 .scene .description {
-  height: 75px;
+  height: 125px;
 }
 
 .scene .episode {
