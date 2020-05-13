@@ -41,7 +41,9 @@ class Timeline extends React.Component {
           updateFilters={this.updateFilters}
           displayOrder={this.state.displayOrder}
           filters={this.state.filters} />
-        <Scenes displayOrder={this.state.displayOrder} />
+        <Scenes
+          displayOrder={this.state.displayOrder}
+          filters={this.state.filters} />
       </div>
     );
   }

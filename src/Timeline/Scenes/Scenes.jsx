@@ -7,27 +7,29 @@ import './Scenes.css';
 
 class Scenes extends React.Component {
   static propTypes = {
-    displayOrder: PropTypes.string.isRequired
+    displayOrder: PropTypes.string.isRequired,
+    filters: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
 
-    this.fetchItems = this.fetchItems.bind(this);
+    this.fetchData = this.fetchData.bind(this);
     this.orderedScenes = this.orderedScenes.bind(this);
     this.renderScenes = this.renderScenes.bind(this);
 
     this.state = {
       isLoading: true,
-      scenes: []
+      data: null,
+      scenes: null
     }
   }
 
   componentDidMount() {
-    this.fetchItems();
+    this.fetchData();
   }
 
-  fetchItems() {
+  fetchData() {
     const self = this;
 
     this.setState({ isLoading: true });
@@ -38,11 +40,25 @@ class Scenes extends React.Component {
   }
 
   orderedScenes() {
-    if (this.props.displayOrder === 'episodic') {
-      return this.state.scenes;
+    const { displayOrder, filters } = this.props;
+    let scenes = this.state.scenes.slice();
+
+    if (displayOrder === 'chronological') {
+      scenes.sort((a, b) => a.occurredAt > b.occurredAt);
     }
 
-    return this.state.scenes.slice().sort((a, b) => a.occurredAt > b.occurredAt);
+    return this.filter(scenes, filters);
+  }
+
+  filter(scenes, filters) {
+    if (filters.episode) {
+      scenes = scenes.filter((scene) => {
+        const episode = `s${scene.season}e${scene.episode}`;
+        return episode === filters.episode;
+      })
+    }
+
+    return scenes;
   }
 
   renderScenes() {

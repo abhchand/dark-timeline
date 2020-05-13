@@ -16,7 +16,7 @@ class EpisodeFilter extends React.Component {
     this.onChange = this.onChange.bind(this);
 
     this.episodes = [
-      { id: null, value: 'Filter by Episode' },
+      { id: '', value: 'All' },
       { id: 's1e01', value: 'S1 E01' },
       { id: 's1e02', value: 'S2 E02' },
       { id: 's1e03', value: 'S3 E03' },
@@ -26,15 +26,24 @@ class EpisodeFilter extends React.Component {
   }
 
   onChange(e) {
-    this.props.onChange('episode', e.currentTarget.value);
+    let value = e.currentTarget.value;
+
+    if (value === '') {
+      value = null;
+    }
+
+    this.props.onChange('episode', value);
   }
 
   render() {
     return (
       <div className="episode-filter">
+        <label htmlFor='episode-filter'>
+          Episode
+        </label>
         <select
           id="episode-filter"
-          onBlur={this.onChange}
+          onChange={this.onChange}
           defaultValue={this.props.filters.episode || ''}>
           {
             this.episodes.map((option, _i) => {
