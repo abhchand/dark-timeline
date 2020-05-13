@@ -44,7 +44,12 @@ class Scenes extends React.Component {
     let scenes = this.state.scenes.slice();
 
     if (displayOrder === 'chronological') {
-      scenes.sort((a, b) => a.occurredAt > b.occurredAt);
+      scenes.sort((a, b) => {
+        if (a.year < b.year) return -1;
+        if (a.year > b.year) return 1;
+        if (a.day < b.day) return -1;
+        if (a.day > b.day) return 1;
+      });
     }
 
     return this.filter(scenes, filters);
