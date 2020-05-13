@@ -17,7 +17,7 @@ function DisplayOrderToggle(props) {
         id='display-order-toggle'
         defaultChecked={false}
         icons={false}
-        onChange={props.handleToggle} />
+        onChange={props.onChange} />
       <label htmlFor='display-order-toggle'>
         {copy[props.displayOrder]}
       </label>
@@ -26,8 +26,8 @@ function DisplayOrderToggle(props) {
 }
 
 DisplayOrderToggle.propTypes = {
-  handleToggle: PropTypes.func.isRequired,
-  displayOrder: PropTypes.string.isRequired
+  displayOrder: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 export default DisplayOrderToggle;

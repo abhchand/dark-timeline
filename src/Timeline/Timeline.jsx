@@ -8,23 +8,39 @@ class Timeline extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleToggle = this.handleToggle.bind(this);
+    this.updateToggle = this.updateToggle.bind(this);
+    this.updateFilters = this.updateFilters.bind(this);
 
     this.state = {
-      displayOrder: 'episodic'
+      displayOrder: 'episodic',
+      filters: {
+        time: null,
+        episode: null
+      }
     }
   }
 
-  handleToggle(e) {
+  updateToggle(e) {
     this.setState({
       displayOrder: e.target.checked ? 'chronological' : 'episodic'
     });
   }
 
+  updateFilters(key, value) {
+    let { filters } = this.state;
+    filters[key] = value;
+
+    this.setState({ filters: filters });
+  }
+
   render() {
     return (
       <div className="timeline">
-        <Header handleToggle={this.handleToggle} displayOrder={this.state.displayOrder} />
+        <Header
+          updateToggle={this.updateToggle}
+          updateFilters={this.updateFilters}
+          displayOrder={this.state.displayOrder}
+          filters={this.state.filters} />
         <Scenes displayOrder={this.state.displayOrder} />
       </div>
     );

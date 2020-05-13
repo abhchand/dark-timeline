@@ -1,13 +1,16 @@
+import DisplayOrderToggle from './DisplayOrderToggle/DisplayOrderToggle';
+import EpisodeFilter from './EpisodeFilter/EpisodeFilter';
 import PropTypes from 'prop-types';
 import React from 'react';
-import DisplayOrderToggle from './DisplayOrderToggle/DisplayOrderToggle';
 
 import './Header.css';
 
 class Header extends React.Component {
   static propTypes = {
-    handleToggle: PropTypes.func.isRequired,
-    displayOrder: PropTypes.string.isRequired
+    updateToggle: PropTypes.func.isRequired,
+    updateFilters: PropTypes.func.isRequired,
+    displayOrder: PropTypes.string.isRequired,
+    filters: PropTypes.object.isRequired
   };
 
   render() {
@@ -15,7 +18,10 @@ class Header extends React.Component {
       <div className="header">
         <DisplayOrderToggle
           displayOrder={this.props.displayOrder}
-          handleToggle={this.props.handleToggle} />
+          onChange={this.props.updateToggle} />
+        <EpisodeFilter
+          filters={this.props.filters}
+          onChange={this.props.updateFilters} />
       </div>
     );
   }
