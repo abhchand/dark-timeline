@@ -12,3 +12,7 @@
 .app .intro p {
   color: white;
 }
+
+.app .intro p > a {
+  color: yellow;
+}
