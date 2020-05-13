@@ -5,6 +5,12 @@
   margin-top: 50px;
 }
 
+.app .title-card {
+  width: 490px;
+  display: block;
+  margin: auto;
+}
+
 .app .intro {
   margin-bottom: 50px;
 }
