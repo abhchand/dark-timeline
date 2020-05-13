@@ -62,7 +62,20 @@ class Scenes extends React.Component {
       scenes = scenes.filter((scene) => {
         const episode = `s${scene.season}e${scene.episode}`;
         return episode === filters.episode;
-      })
+      });
+    }
+
+    if (filters.year) {
+      scenes = scenes.filter((scene) => {
+        return scene.date.year === filters.year;
+      });
+    }
+
+    if (filters.day) {
+      scenes = scenes.filter((scene) => {
+        const day = `${scene.date.month}-${scene.date.day}`;
+        return day === filters.day;
+      });
     }
 
     return scenes;
