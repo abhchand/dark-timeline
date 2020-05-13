@@ -34,7 +34,7 @@ class Scenes extends React.Component {
 
     this.setState({ isLoading: true });
 
-    fetch("/data/1.json").
+    fetch("/data.json").
       then(function(response) { return response.json(); }).
       then(function(result) { self.setState({ scenes: result.data, isLoading: false }); });
   }
