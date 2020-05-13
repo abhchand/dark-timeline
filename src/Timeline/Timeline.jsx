@@ -14,8 +14,9 @@ class Timeline extends React.Component {
     this.state = {
       displayOrder: 'episodic',
       filters: {
-        time: null,
-        episode: null
+        episode: null,
+        year: null,
+        day: null
       }
     }
   }

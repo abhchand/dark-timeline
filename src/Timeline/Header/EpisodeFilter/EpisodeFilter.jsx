@@ -37,7 +37,7 @@ class EpisodeFilter extends React.Component {
 
   render() {
     return (
-      <div className="episode-filter">
+      <div className="episode-filter header-block">
         <label htmlFor='episode-filter'>
           Episode
         </label>

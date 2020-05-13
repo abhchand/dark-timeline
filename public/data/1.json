@@ -4,7 +4,8 @@
       "season": "1",
       "episode": "01",
       "scene": "001",
-      "occurredAt": "2019-11-04 18:00:00",
+      "year": "2019",
+      "day": "11-04",
       "description": "Mikkel hangs himself",
       "image": {
         "original": "/test/1589227785.jpg",
@@ -15,7 +16,8 @@
       "season": "1",
       "episode": "01",
       "scene": "002",
-      "occurredAt": "1920-02-04 18:01:00",
+      "year": "1920",
+      "day": "02-04",
       "description": "Jonas wakes up",
       "image": {
         "original": "/test/1589227563.jpg",
@@ -26,7 +28,8 @@
       "season": "1",
       "episode": "01",
       "scene": "003",
-      "occurredAt": "1920-02-04 18:00:00",
+      "year": "1920",
+      "day": "02-04",
       "description": "Something else",
       "image": {
         "original": "/test/1589227595.jpg",
@@ -37,7 +40,8 @@
       "season": "1",
       "episode": "02",
       "scene": "001",
-      "occurredAt": "2019-11-04 18:00:00",
+      "year": "2019",
+      "day": "11-04",
       "description": "A final description",
       "image": {
         "original": "/test/1589227859.jpg",

@@ -1,3 +1,27 @@
 .header {
   margin-bottom: 50px;
 }
+
+.header-block {
+  height: 50px;
+  margin: 5px 0;
+}
+
+.header-block label {
+  display: inline-block;
+  width: 200px;
+}
+
+.header-block select {
+  box-sizing: border-box;
+  background-color: black;
+  color: yellow;
+  width: 200px;
+  height: 48px;
+  margin: 10px 0;
+  padding: 10px 15px;
+  font-size: 18px;
+  line-height: 48px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
