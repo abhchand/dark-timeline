@@ -7,6 +7,16 @@
   padding: 5px;
 }
 
+.scene .date {
+  color: gray;
+  margin: 10px 0;
+}
+
+.scene .description {
+  height: 75px;
+}
+
 .scene .episode {
   color: white;
+  margin: 10px 0;
 }

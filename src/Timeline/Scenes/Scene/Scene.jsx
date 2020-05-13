@@ -34,11 +34,11 @@ class Scene extends React.Component {
     return (
       <div className="scene" data-id={`${scene.season}-${scene.episode}-${scene.scene}`}>
         <a target="_blank" href={scene.image.original} ><img src={scene.image.thumb} /></a>
-        <h4 className="episode">S{scene.season} E{scene.episode}</h4>
-        <p className="date">
-          {scene.date.day} {month}, {scene.date.year}
-        </p>
+        <h5 className="date">
+          {scene.date.day} {month} {scene.date.year}
+        </h5>
         <p className="description">{scene.description}</p>
+        <h5 className="episode">S{scene.season} E{scene.episode}</h5>
       </div>
     );
   }
