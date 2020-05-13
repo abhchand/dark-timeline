@@ -1,3 +1,4 @@
+import Loading from './Loading/Loading';
 import React from 'react';
 import Scene from './Scene/Scene';
 import PropTypes from 'prop-types';
@@ -17,6 +18,7 @@ class Scenes extends React.Component {
     this.renderScenes = this.renderScenes.bind(this);
 
     this.state = {
+      isLoading: true,
       scenes: []
     }
   }
@@ -28,9 +30,11 @@ class Scenes extends React.Component {
   fetchItems() {
     const self = this;
 
+    this.setState({ isLoading: true });
+
     fetch("/data/1.json").
       then(function(response) { return response.json(); }).
-      then(function(result) { self.setState({ scenes: result.data }); });
+      then(function(result) { self.setState({ scenes: result.data, isLoading: false }); });
   }
 
   orderedScenes() {
@@ -54,6 +58,10 @@ class Scenes extends React.Component {
   }
 
   render() {
+    if (this.state.isLoading) {
+      return <Loading />;
+    }
+
     return (
       <div className="scenes">
         {this.renderScenes()}
