@@ -64,7 +64,7 @@ class Scene extends React.Component {
 
     return (
       [
-        <div className="scene" key={id} data-id={id} onClick={this.openModal}>
+        <div className="scene" key={id} data-id={id} onClick={this.openModal} tabIndex={0}>
           <img src={scene.image.thumb} />
 
           <h5 className="date">{scene.date.day} {month} {scene.date.year}</h5>
