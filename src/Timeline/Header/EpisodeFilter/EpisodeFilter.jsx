@@ -44,7 +44,7 @@ class EpisodeFilter extends React.Component {
         <select
           id="episode-filter"
           onChange={this.onChange}
-          defaultValue={this.props.filters.episode || ''}>
+          value={this.props.filters.episode || ''}>
           {
             this.episodes.map((option, _i) => {
               return (

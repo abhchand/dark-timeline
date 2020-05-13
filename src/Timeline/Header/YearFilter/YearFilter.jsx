@@ -46,7 +46,7 @@ class YearFilter extends React.Component {
         <select
           id="year-filter"
           onChange={this.onChange}
-          defaultValue={this.props.filters.year || ''}>
+          value={this.props.filters.year || ''}>
           {
             this.years.map((option, _i) => {
               return (

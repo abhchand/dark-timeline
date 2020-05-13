@@ -55,7 +55,7 @@ class DayFilter extends React.Component {
         <select
           id="day-filter"
           onChange={this.onChange}
-          defaultValue={this.props.filters.day || ''}>
+          value={this.props.filters.day || ''}>
           {
             this.days.map((option, _i) => {
               return (

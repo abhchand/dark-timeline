@@ -10,6 +10,7 @@ class Timeline extends React.Component {
 
     this.updateToggle = this.updateToggle.bind(this);
     this.updateFilters = this.updateFilters.bind(this);
+    this.resetFilters = this.resetFilters.bind(this);
 
     this.state = {
       displayOrder: 'episodic',
@@ -34,12 +35,23 @@ class Timeline extends React.Component {
     this.setState({ filters: filters });
   }
 
+  resetFilters() {
+    this.setState({
+      filters: {
+        episode: null,
+        year: null,
+        day: null
+      }
+    });
+  }
+
   render() {
     return (
       <div className="timeline">
         <Header
           updateToggle={this.updateToggle}
           updateFilters={this.updateFilters}
+          resetFilters={this.resetFilters}
           displayOrder={this.state.displayOrder}
           filters={this.state.filters} />
         <Scenes
