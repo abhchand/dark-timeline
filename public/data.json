@@ -4,8 +4,11 @@
       "season": "1",
       "episode": "01",
       "scene": "001",
-      "year": "2019",
-      "day": "11-04",
+      "date": {
+        "year": "2019",
+        "month": "11",
+        "day": "04"
+      },
       "description": "Mikkel hangs himself",
       "image": {
         "original": "/test/1589227785.jpg",
@@ -16,8 +19,11 @@
       "season": "1",
       "episode": "01",
       "scene": "002",
-      "year": "1920",
-      "day": "02-04",
+      "date": {
+        "year": "1920",
+        "month": "02",
+        "day": "04"
+      },
       "description": "Jonas wakes up",
       "image": {
         "original": "/test/1589227563.jpg",
@@ -28,8 +34,11 @@
       "season": "1",
       "episode": "01",
       "scene": "003",
-      "year": "1920",
-      "day": "02-04",
+      "date": {
+        "year": "1920",
+        "month": "02",
+        "day": "04"
+      },
       "description": "Something else",
       "image": {
         "original": "/test/1589227595.jpg",
@@ -40,8 +49,11 @@
       "season": "1",
       "episode": "02",
       "scene": "001",
-      "year": "2019",
-      "day": "11-04",
+      "date": {
+        "year": "2019",
+        "month": "11",
+        "day": "04"
+      },
       "description": "A final description",
       "image": {
         "original": "/test/1589227859.jpg",

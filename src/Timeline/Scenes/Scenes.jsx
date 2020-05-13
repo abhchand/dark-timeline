@@ -45,10 +45,12 @@ class Scenes extends React.Component {
 
     if (displayOrder === 'chronological') {
       scenes.sort((a, b) => {
-        if (a.year < b.year) return -1;
-        if (a.year > b.year) return 1;
-        if (a.day < b.day) return -1;
-        if (a.day > b.day) return 1;
+        if (a.date.year < b.date.year) return -1;
+        if (a.date.year > b.date.year) return 1;
+        if (a.date.month < b.date.month) return -1;
+        if (a.date.month > b.date.month) return 1;
+        if (a.date.day < b.date.day) return -1;
+        if (a.date.day > b.date.day) return 1;
       });
     }
 
