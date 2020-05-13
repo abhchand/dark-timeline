@@ -5,18 +5,26 @@
   border: 1px white solid;
   margin: 5px;
   padding: 5px;
+  cursor: pointer;
+}
+
+.scene:hover {
+  background-color: rgba(255, 255, 0, .1);
+  border: 1px yellow solid;
 }
 
 .scene .date {
+  color: white;
+  margin: 10px 0;
+}
+
+.scene .episode {
   color: gray;
   margin: 10px 0;
 }
 
 .scene .description {
   height: 125px;
-}
-
-.scene .episode {
-  color: white;
-  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.4;
 }
