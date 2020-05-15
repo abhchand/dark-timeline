@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import Modal from './Modal/Modal';
 
@@ -15,6 +16,7 @@ class Scene extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.renderImage = this.renderImage.bind(this);
+    this.renderDescription = this.renderDescription.bind(this);
     this.renderModal = this.renderModal.bind(this);
 
     this.maxDescriptionLen = 100;
@@ -64,6 +66,10 @@ class Scene extends React.Component {
     return <img src={src} />;
   }
 
+  renderDescription(scene) {
+    return <ReactMarkdown source={scene.description} />;
+  }
+
   render() {
     const { scene } = this.props;
     const month = this.months[parseInt(scene.date.month, 10) - 1];
@@ -77,7 +83,7 @@ class Scene extends React.Component {
           <h5 className="date">{scene.date.day} {month} {scene.date.year}</h5>
           <h6 className="episode">S{scene.season} E{scene.episode}</h6>
 
-          <p className="description">{this.trimmedDescription(scene.description)}</p>
+          <p className="description">{this.renderDescription(scene)}</p>
         </div>,
         this.renderModal()
       ]

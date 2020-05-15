@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 
 import './Modal.css';
@@ -13,6 +14,7 @@ class Modal extends React.Component {
     super(props);
 
     this.renderImage = this.renderImage.bind(this);
+    this.renderDescription = this.renderDescription.bind(this);
 
     this.months = [
       'Jan',
@@ -36,6 +38,10 @@ class Modal extends React.Component {
     return <img src={src} />;
   }
 
+  renderDescription(scene) {
+    return <ReactMarkdown source={scene.description} />;
+  }
+
   render() {
     const { scene } = this.props;
     const month = this.months[parseInt(scene.date.month, 10) - 1];
@@ -48,7 +54,7 @@ class Modal extends React.Component {
           <h5 className="date">{scene.date.day} {month} {scene.date.year}</h5>
           <h6 className="episode">S{scene.season} E{scene.episode}</h6>
 
-          <p className="description">{scene.description}</p>
+          <p className="description">{this.renderDescription(scene)}</p>
 
           <a target="_blank" href={scene.images[0].original} >
             {this.renderImage(scene)}
