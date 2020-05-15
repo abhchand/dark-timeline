@@ -27,11 +27,44 @@ body.modal-open {
 }
 
 .scene-modal .close {
+  cursor: pointer;
+  color: yellow;
   position: absolute;
   top: 20px;
   right: 20px;
+  background-color: black;
+  border: none;
+  font-size: 16px;
+}
+
+.scene-modal .nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.scene-modal .progress {
+  text-align: center;
+  width: 100px;
+  margin: 0 10px;
+}
+
+.scene-modal .prev,
+.scene-modal .next,
+.scene-modal .nav-placeholder {
+  text-align: center;
+  width: 75px;
+}
+
+.scene-modal .prev,
+.scene-modal .next {
   cursor: pointer;
+  background-color: black;
   color: yellow;
+  font-size: 16px;
 }
 
 .scene-modal .date {

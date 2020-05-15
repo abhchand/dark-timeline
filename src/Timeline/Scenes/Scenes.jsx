@@ -1,4 +1,5 @@
 import Loading from './Loading/Loading';
+import Modal from './Modal/Modal';
 import React from 'react';
 import Scene from './Scene/Scene';
 import PropTypes from 'prop-types';
@@ -14,6 +15,10 @@ class Scenes extends React.Component {
   constructor(props) {
     super(props);
 
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.prevSceneModal = this.prevSceneModal.bind(this);
+    this.nextSceneModal = this.nextSceneModal.bind(this);
     this.fetchData = this.fetchData.bind(this);
     this.orderedScenes = this.orderedScenes.bind(this);
     this.renderScenes = this.renderScenes.bind(this);
@@ -21,12 +26,43 @@ class Scenes extends React.Component {
     this.state = {
       isLoading: true,
       data: null,
-      scenes: null
+      scenes: null,
+      sceneModalIdx: null
     }
   }
 
   componentDidMount() {
     this.fetchData();
+  }
+
+  openModal(e) {
+    this.setState({ sceneModalIdx: parseInt(e.currentTarget.dataset.id) });
+
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('modal-open');
+  }
+
+  closeModal(e) {
+    // Only consider clicks on the direct element itself, not any
+    // child elements.
+    if (e.target !== e.currentTarget) return;
+
+    this.setState({ sceneModalIdx: null });
+
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.remove('modal-open');
+  }
+
+  prevSceneModal() {
+    this.setState({
+      sceneModalIdx: this.state.sceneModalIdx - 1
+    });
+  }
+
+  nextSceneModal() {
+    this.setState({
+      sceneModalIdx: this.state.sceneModalIdx + 1
+    });
   }
 
   fetchData() {
@@ -81,14 +117,37 @@ class Scenes extends React.Component {
     return scenes;
   }
 
+  renderModal() {
+    const { sceneModalIdx } = this.state;
+    if (sceneModalIdx === null) { return null; }
+
+    const scene = this.data[sceneModalIdx];
+
+    return (
+      <Modal
+        key={`modal-${sceneModalIdx}`}
+        scene={scene}
+        sceneModalIdx={sceneModalIdx}
+        lastSceneModalIdx={this.data.length - 1}
+        close={this.closeModal}
+        navigatePrev={this.prevSceneModal}
+        navigateNext={this.nextSceneModal} />
+    );
+  }
+
   renderScenes() {
     if (!this.state.scenes) {
       return null;
     }
 
     return (
-      this.orderedScenes().map((scene) => {
-        return <Scene scene={scene} />;
+      this.data.map((scene, idx) => {
+        return (
+          <Scene
+            sceneIdx={idx}
+            scene={scene}
+            openModal={this.openModal} />
+        );
       })
     );
   }
@@ -98,9 +157,13 @@ class Scenes extends React.Component {
       return <Loading />;
     }
 
+    // Re-calculate list of scenes based on current filters
+    this.data = this.orderedScenes();
+
     return (
       <div className="scenes">
         {this.renderScenes()}
+        {this.renderModal()}
       </div>
     );
   }
