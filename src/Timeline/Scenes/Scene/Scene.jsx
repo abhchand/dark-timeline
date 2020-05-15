@@ -19,7 +19,7 @@ class Scene extends React.Component {
     this.renderDescription = this.renderDescription.bind(this);
     this.renderModal = this.renderModal.bind(this);
 
-    this.maxDescriptionLen = 100;
+    this.maxDescriptionLen = 150;
     this.months = [
       'Jan',
       'Feb',
