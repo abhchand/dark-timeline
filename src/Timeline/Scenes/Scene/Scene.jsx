@@ -42,10 +42,16 @@ class Scene extends React.Component {
 
   openModal() {
     this.setState({ isModalOpen: true });
+
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('modal-open');
   }
 
   closeModal() {
     this.setState({ isModalOpen: false });
+
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.remove('modal-open');
   }
 
   trimmedDescription(description) {
