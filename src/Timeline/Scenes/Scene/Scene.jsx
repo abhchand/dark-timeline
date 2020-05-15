@@ -67,7 +67,7 @@ class Scene extends React.Component {
   }
 
   renderDescription(scene) {
-    return <ReactMarkdown source={scene.description} />;
+    return <ReactMarkdown source={this.trimmedDescription(scene.description)} />;
   }
 
   render() {
