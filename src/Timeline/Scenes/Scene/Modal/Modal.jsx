@@ -49,7 +49,7 @@ class Modal extends React.Component {
     const month = this.months[parseInt(scene.date.month, 10) - 1];
 
     return (
-      <div className="scene-modal modal" data-id={`${scene.season}-${scene.episode}-${scene.scene}`}>
+      <div className="scene-modal modal" data-id={`${scene.season}-${scene.episode}-${scene.scene}`} onClick={this.props.close}>
         <div className="modal-content">
           <div className="close" onClick={this.props.close}>close</div>
 

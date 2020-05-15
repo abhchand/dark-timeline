@@ -47,7 +47,9 @@ class Scene extends React.Component {
     body.classList.add('modal-open');
   }
 
-  closeModal() {
+  closeModal(e) {
+    if (e.target !== e.currentTarget) return;
+
     this.setState({ isModalOpen: false });
 
     const body = document.getElementsByTagName('body')[0];
