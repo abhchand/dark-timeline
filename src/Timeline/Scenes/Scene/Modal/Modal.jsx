@@ -12,6 +12,8 @@ class Modal extends React.Component {
   constructor(props) {
     super(props);
 
+    this.renderImage = this.renderImage.bind(this);
+
     this.months = [
       'Jan',
       'Feb',
@@ -28,6 +30,12 @@ class Modal extends React.Component {
     ];
   }
 
+  renderImage(scene) {
+    const src = scene.images ? scene.images[0].original : '/screenshots/placeholder.jpg';
+
+    return <img src={src} />;
+  }
+
   render() {
     const { scene } = this.props;
     const month = this.months[parseInt(scene.date.month, 10) - 1];
@@ -42,8 +50,8 @@ class Modal extends React.Component {
 
           <p className="description">{scene.description}</p>
 
-          <a target="_blank" href={scene.image.original} >
-            <img src={scene.image.original} />
+          <a target="_blank" href={scene.images[0].original} >
+            {this.renderImage(scene)}
           </a>
 
         </div>

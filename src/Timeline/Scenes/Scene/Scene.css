@@ -1,5 +1,5 @@
 .scene {
-  width: 150px;
+  width: 175px;
   height: 300px;
   text-align: left;
   border: 1px white solid;
@@ -11,6 +11,10 @@
 .scene:hover, .scene:focus {
   background-color: rgba(255, 255, 0, .1);
   border: 1px yellow solid;
+}
+
+.scene > img {
+  width: 100%;
 }
 
 .scene .date {

@@ -60,20 +60,20 @@ class Scenes extends React.Component {
   filter(scenes, filters) {
     if (filters.episode) {
       scenes = scenes.filter((scene) => {
-        const episode = `s${scene.season}e${scene.episode}`;
+        const episode = `s${scene.season}e${scene.episode.toString().padStart(2, '0')}`;
         return episode === filters.episode;
       });
     }
 
     if (filters.year) {
       scenes = scenes.filter((scene) => {
-        return scene.date.year === filters.year;
+        return scene.date.year.toString() === filters.year;
       });
     }
 
     if (filters.day) {
       scenes = scenes.filter((scene) => {
-        const day = `${scene.date.month}-${scene.date.day}`;
+        const day = `${scene.date.month.toString().padStart(2, '0')}-${scene.date.day.toString().padStart(2, '0')}`;
         return day === filters.day;
       });
     }

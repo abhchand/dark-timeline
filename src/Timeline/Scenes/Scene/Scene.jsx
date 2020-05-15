@@ -14,6 +14,7 @@ class Scene extends React.Component {
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.renderImage = this.renderImage.bind(this);
     this.renderModal = this.renderModal.bind(this);
 
     this.maxDescriptionLen = 100;
@@ -57,6 +58,12 @@ class Scene extends React.Component {
     return <Modal key={`modal-${id}`} scene={this.props.scene} close={this.closeModal} />;
   }
 
+  renderImage(scene) {
+    const src = scene.images ? scene.images[0].thumb : '/screenshots/placeholder-thumb.jpg';
+
+    return <img src={src} />;
+  }
+
   render() {
     const { scene } = this.props;
     const month = this.months[parseInt(scene.date.month, 10) - 1];
@@ -65,7 +72,7 @@ class Scene extends React.Component {
     return (
       [
         <div className="scene" key={id} data-id={id} onClick={this.openModal} tabIndex={0}>
-          <img src={scene.image.thumb} />
+          {this.renderImage(scene)}
 
           <h5 className="date">{scene.date.day} {month} {scene.date.year}</h5>
           <h6 className="episode">S{scene.season} E{scene.episode}</h6>

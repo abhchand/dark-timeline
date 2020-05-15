@@ -27,6 +27,7 @@
   top: 20px;
   right: 20px;
   cursor: pointer;
+  color: yellow;
 }
 
 .scene-modal .date {
@@ -42,8 +43,10 @@
 .scene-modal .description {
   font-size: 16px;
   line-height: 1.4;
+  margin-bottom: 50px;
 }
 
 .scene-modal img {
   width: 100%;
+  border: 1px white solid;
 }
