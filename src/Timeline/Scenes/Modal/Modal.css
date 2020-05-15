@@ -69,12 +69,14 @@ body.modal-open {
 
 .scene-modal .date {
   color: white;
-  margin: 10px 0;
+  margin: 5px 0;
+  font-size: 16px;
 }
 
 .scene-modal .episode {
   color: gray;
-  margin: 10px 0;
+  margin: 5px 0;
+  font-size: 16px;
 }
 
 .scene-modal .description {
