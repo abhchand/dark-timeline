@@ -15,6 +15,7 @@
 
 .scene > img {
   width: 100%;
+  border: 1px solid darkslategray;
 }
 
 .scene .date {
