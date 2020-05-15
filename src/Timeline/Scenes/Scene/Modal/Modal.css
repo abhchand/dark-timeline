@@ -46,7 +46,15 @@
   margin-bottom: 50px;
 }
 
+.scene-modal .images {
+  width: 100%;
+  max-height: 450px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .scene-modal img {
   width: 100%;
   border: 1px white solid;
+  box-sizing: border-box;
 }

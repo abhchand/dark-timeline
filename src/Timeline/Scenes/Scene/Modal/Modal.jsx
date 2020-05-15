@@ -13,7 +13,7 @@ class Modal extends React.Component {
   constructor(props) {
     super(props);
 
-    this.renderImage = this.renderImage.bind(this);
+    this.renderImages = this.renderImages.bind(this);
     this.renderDescription = this.renderDescription.bind(this);
 
     this.months = [
@@ -32,10 +32,12 @@ class Modal extends React.Component {
     ];
   }
 
-  renderImage(scene) {
-    const src = scene.images ? scene.images[0].original : '/screenshots/placeholder.jpg';
+  renderImages(scene) {
+    const urls = scene.images ? scene.images.map(i => i.original) : ['/screenshots/placeholder.jpg'];
 
-    return <img src={src} />;
+    return urls.map((url) => {
+      return <a target="_blank" href={url} ><img src={url} /></a>;
+    });
   }
 
   renderDescription(scene) {
@@ -56,10 +58,9 @@ class Modal extends React.Component {
 
           <p className="description">{this.renderDescription(scene)}</p>
 
-          <a target="_blank" href={scene.images[0].original} >
-            {this.renderImage(scene)}
-          </a>
-
+          <div className="images">
+            {this.renderImages(scene)}
+          </div>
         </div>
       </div>
     );
