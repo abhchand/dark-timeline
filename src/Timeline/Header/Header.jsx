@@ -1,3 +1,4 @@
+import CharacterFilter from './CharacterFilter/CharacterFilter';
 import DayFilter from './DayFilter/DayFilter';
 import DisplayOrderToggle from './DisplayOrderToggle/DisplayOrderToggle';
 import EpisodeFilter from './EpisodeFilter/EpisodeFilter';
@@ -30,6 +31,9 @@ class Header extends React.Component {
           filters={this.props.filters}
           onChange={this.props.updateFilters} />
         <DayFilter
+          filters={this.props.filters}
+          onChange={this.props.updateFilters} />
+        <CharacterFilter
           filters={this.props.filters}
           onChange={this.props.updateFilters} />
 

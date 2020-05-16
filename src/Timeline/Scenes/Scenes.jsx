@@ -114,6 +114,12 @@ class Scenes extends React.Component {
       });
     }
 
+    if (filters.character) {
+      scenes = scenes.filter((scene) => {
+        return scene.characters.indexOf(filters.character) > -1;
+      });
+    }
+
     return scenes;
   }
 
