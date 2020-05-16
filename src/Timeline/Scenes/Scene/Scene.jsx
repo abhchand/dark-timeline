@@ -16,6 +16,7 @@ class Scene extends React.Component {
 
     this.renderImage = this.renderImage.bind(this);
     this.renderDescription = this.renderDescription.bind(this);
+    this.isTimeTravel = this.isTimeTravel.bind(this);
 
     this.maxDescriptionLen = 150;
     this.months = [
@@ -50,12 +51,17 @@ class Scene extends React.Component {
     return <ReactMarkdown source={this.trimmedDescription(scene.description)} />;
   }
 
+  isTimeTravel(scene) {
+    return scene.timeTravel && scene.timeTravel.id;
+  }
+
   render() {
     const { scene } = this.props;
     const month = this.months[parseInt(scene.date.month, 10) - 1];
+    const timeTravelClass = this.isTimeTravel(scene) ? 'scene--time-travel' : '';
 
     return (
-      <div className="scene" data-id={this.props.sceneIdx} onClick={this.props.openModal} tabIndex={0}>
+      <div className={`scene ${timeTravelClass}`} data-id={this.props.sceneIdx} onClick={this.props.openModal} tabIndex={0}>
         {this.renderImage(scene)}
 
         <h5 className="date">{scene.date.day} {month} {scene.date.year}</h5>
