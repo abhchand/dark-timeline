@@ -16,6 +16,7 @@ class DayFilter extends React.Component {
 
     this.days = [
       { id: '', value: 'All' },
+
       {id: '06-20', value: 'Jun 20'},
       {id: '06-21', value: 'Jun 21'},
       {id: '06-22', value: 'Jun 22'},
@@ -24,6 +25,7 @@ class DayFilter extends React.Component {
       {id: '06-25', value: 'Jun 25'},
       {id: '06-26', value: 'Jun 26'},
       {id: '06-27', value: 'Jun 27'},
+
       {id: '11-04', value: 'Nov 4'},
       {id: '11-05', value: 'Nov 5'},
       {id: '11-06', value: 'Nov 6'},

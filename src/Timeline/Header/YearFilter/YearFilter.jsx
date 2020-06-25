@@ -16,6 +16,7 @@ class YearFilter extends React.Component {
 
     this.years = [
       { id: '', value: 'All' },
+      { id: '1921', value: '1921' },
       { id: '1953', value: '1953' },
       { id: '1954', value: '1954' },
       { id: '1986', value: '1986' },

@@ -18,10 +18,24 @@ class EpisodeFilter extends React.Component {
     this.episodes = [
       { id: '', value: 'All' },
       { id: 's1e01', value: 'S1 E01' },
-      { id: 's1e02', value: 'S2 E02' },
-      { id: 's1e03', value: 'S3 E03' },
-      { id: 's1e04', value: 'S4 E04' },
-      { id: 's1e05', value: 'S5 E05' },
+      { id: 's1e02', value: 'S1 E02' },
+      { id: 's1e03', value: 'S1 E03' },
+      { id: 's1e04', value: 'S1 E04' },
+      { id: 's1e05', value: 'S1 E05' },
+      { id: 's1e06', value: 'S1 E06' },
+      { id: 's1e07', value: 'S1 E07' },
+      { id: 's1e08', value: 'S1 E08' },
+      { id: 's1e09', value: 'S1 E09' },
+      { id: 's1e10', value: 'S1 E10' },
+
+      { id: 's2e01', value: 'S2 E01' },
+      { id: 's2e02', value: 'S2 E02' },
+      { id: 's2e03', value: 'S2 E03' },
+      { id: 's2e04', value: 'S2 E04' },
+      { id: 's2e05', value: 'S2 E05' },
+      { id: 's2e06', value: 'S2 E06' },
+      { id: 's2e07', value: 'S2 E07' },
+      { id: 's2e08', value: 'S2 E08' }
     ]
   }
 
