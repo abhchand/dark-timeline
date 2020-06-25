@@ -44,7 +44,7 @@ class Scene extends React.Component {
   renderImage(scene) {
     const src = scene.images ? scene.images[0].thumb : '/screenshots/placeholder-thumb.png';
 
-    return <img src={src} />;
+    return <img src={process.env.PUBLIC_URL + src} />;
   }
 
   renderDescription(scene) {

@@ -58,7 +58,7 @@ class Modal extends React.Component {
     const urls = scene.images ? scene.images.map(i => i.medium) : ['/screenshots/placeholder.png'];
 
     return urls.map((url) => {
-      return <a target="_blank" href={url} ><img src={url} /></a>;
+      return <a target="_blank" href={process.env.PUBLIC_URL + url} ><img src={process.env.PUBLIC_URL + url} /></a>;
     });
   }
 
