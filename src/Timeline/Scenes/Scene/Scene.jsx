@@ -42,7 +42,7 @@ class Scene extends React.Component {
   }
 
   renderImage(scene) {
-    const src = scene.images ? scene.images[0].thumb : '/screenshots/placeholder-thumb.jpg';
+    const src = scene.images ? scene.images[0].thumb : '/screenshots/placeholder-thumb.png';
 
     return <img src={src} />;
   }
