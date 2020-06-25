@@ -70,7 +70,7 @@ class Scenes extends React.Component {
 
     this.setState({ isLoading: true });
 
-    fetch("/data.json").
+    fetch("/dark-timeline/data.json").
       then(function(response) { return response.json(); }).
       then(function(result) { self.setState({ scenes: result.data, isLoading: false }); });
   }
