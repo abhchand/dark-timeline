@@ -87,6 +87,18 @@ class Scenes extends React.Component {
         if (a.date.month > b.date.month) return 1;
         if (a.date.day < b.date.day) return -1;
         if (a.date.day > b.date.day) return 1;
+        if (a.rank.chronological < b.rank.chronological) return -1;
+        if (a.rank.chronological > b.rank.chronological) return 1;
+      });
+    } else {
+      // Sort by episode
+      scenes.sort((a, b) => {
+        if (a.season < b.season) return -1;
+        if (a.season > b.season) return 1;
+        if (a.episode < b.episode) return -1;
+        if (a.episode > b.episode) return 1;
+        if (a.rank.episode < b.rank.episode) return -1;
+        if (a.rank.episode > b.rank.episode) return 1;
       });
     }
 
