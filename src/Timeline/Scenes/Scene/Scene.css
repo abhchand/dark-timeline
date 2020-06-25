@@ -9,7 +9,6 @@
 }
 
 .scene:hover, .scene:focus {
-  background-color: rgba(255, 255, 0, .1);
   border: 1px yellow solid;
 }
 
@@ -17,14 +16,8 @@
   border-color: magenta;
 }
 
-.scene--time-travel:hover, .scene--time-travel:focus {
-  background-color: rgba(255, 0, 255, .1);
-  border-color: magenta;
-}
-
 .scene > img {
   width: 100%;
-  border: 1px solid darkslategray;
 }
 
 .scene .date {
