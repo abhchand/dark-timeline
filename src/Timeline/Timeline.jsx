@@ -17,7 +17,8 @@ class Timeline extends React.Component {
       filters: {
         episode: null,
         year: null,
-        day: null
+        day: null,
+        characer: null
       }
     }
   }
