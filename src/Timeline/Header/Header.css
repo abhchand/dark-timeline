@@ -6,6 +6,14 @@
   padding: 10px;
 }
 
+.header > p {
+  color: chartreuse;
+}
+
+.header > p > a {
+  color: yellow;
+}
+
 .header-block {
   height: 50px;
   margin: 5px 0;
