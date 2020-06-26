@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rf docs && mv build docs",
+    "build": "react-scripts build",
+    "postbuild": "rm -rf docs && mv build docs && ruby ./add-google-analytics.rb",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
