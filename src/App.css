@@ -35,6 +35,10 @@
   color: white;
 }
 
+.app .intro p .highlight {
+  color: chartreuse;
+}
+
 .app .intro p > a {
   color: yellow;
 }
