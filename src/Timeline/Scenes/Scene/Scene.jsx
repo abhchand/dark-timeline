@@ -16,6 +16,7 @@ class Scene extends React.Component {
 
     this.renderImage = this.renderImage.bind(this);
     this.renderDescription = this.renderDescription.bind(this);
+    this.renderTimeTravelStamp = this.renderTimeTravelStamp.bind(this);
     this.isTimeTravel = this.isTimeTravel.bind(this);
 
     this.maxDescriptionLen = 150;
@@ -55,6 +56,12 @@ class Scene extends React.Component {
     return scene.timeTravel && scene.timeTravel.id;
   }
 
+  renderTimeTravelStamp(scene) {
+    if (!this.isTimeTravel(scene)) return;
+
+    return <span className='scene--time-travel-stamp'>TIME TRAVEL</span>;
+  }
+
   render() {
     const { scene } = this.props;
     const month = this.months[parseInt(scene.date.month, 10) - 1];
@@ -68,6 +75,8 @@ class Scene extends React.Component {
         <h6 className="episode">S{scene.season} E{scene.episode}</h6>
 
         <p className="description">{this.renderDescription(scene)}</p>
+
+        {this.renderTimeTravelStamp(scene)}
       </div>
     );
   }
