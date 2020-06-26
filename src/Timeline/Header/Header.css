@@ -6,10 +6,6 @@
   padding: 10px;
 }
 
-.header > p {
-  color: chartreuse;
-}
-
 .header > p > a {
   color: yellow;
 }

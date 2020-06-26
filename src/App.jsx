@@ -1,3 +1,4 @@
+import About from './About/About';
 import React from 'react';
 import Timeline from './Timeline/Timeline';
 
@@ -8,15 +9,18 @@ function App() {
     <div className="app">
       <img className="title-card" src={process.env.PUBLIC_URL + '/dark-title-card.png'} width="490px" />
 
+      <div className="coming-soon">
+        This timeline covers Seasons 1 & 2. Season 3 is coming soon!
+      </div>
+
       <div className="intro">
         <h1>Explore the Timeline of 'Dark'</h1>
 
-        <p>If you'd like to build your own visualizations, <a href={process.env.PUBLIC_URL + '/data.json'}>the data set for episodes</a> is free to use.</p>
-        <p>If you've found this or any other of my projects useful, I would greatly appreciate if you could <a target="_blank" href="https://www.buymeacoffee.com/abhchand">buy me a coffee!</a></p>
-      </div>
+        <p>Below, you can explore each scene in chronological order of the timeline, or in the televised episode order.</p>
+        <p>You may also find the <a target='_blank' href='https://dark-netflix.fandom.com/'>Dark Wiki</a> and the <a target='_blank' href='https://en.wikipedia.org/wiki/Dark_(TV_series)#Family_tree'>Family Tree</a> to be useful references.</p>
 
-      <div className="coming-soon">
-        This timeline covers Seasons 1 & 2. Season 3 is coming soon!
+        <About />
+
       </div>
 
       <Timeline />

@@ -21,11 +21,6 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <p style={{color: 'chartreuse'}}>Below, you can explore each scene in chronological order of the timeline, or in the televised episode order.</p>
-        <p style={{color: 'chartreuse'}}>
-          You may also find the <a target='_blank' href='https://dark-netflix.fandom.com/'>Dark Wiki</a> and the <a target='_blank' href='https://en.wikipedia.org/wiki/Dark_(TV_series)#Family_tree'>Family Tree</a> to be useful references.
-        </p>
-
         <DisplayOrderToggle
           displayOrder={this.props.displayOrder}
           onChange={this.props.updateToggle} />

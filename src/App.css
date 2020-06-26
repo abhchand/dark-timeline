@@ -26,6 +26,11 @@
   margin-bottom: 50px;
 }
 
+.app .intro h1 {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
 .app .intro p {
   color: white;
 }
@@ -41,5 +46,4 @@
   line-height: 20px;
   color: black;
   font-weight: 700;
-  margin-top: 75px;
 }
