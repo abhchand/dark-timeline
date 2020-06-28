@@ -11,6 +11,16 @@
   }
 }
 
+.app > img {
+  width: 90%;
+}
+
+@media screen and (min-width: 480px) {
+  .app > img {
+    width: 480px;
+  }
+}
+
 .app .title-card {
   max-width: 480px;
   display: block;
